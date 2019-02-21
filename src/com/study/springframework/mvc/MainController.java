@@ -5,6 +5,7 @@ import javax.servlet.http.HttpServletRequest;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.RequestParam;
 
 @Controller
 public class MainController {
@@ -35,10 +36,8 @@ public class MainController {
 	}
 	
 	@RequestMapping("/processFormModel")
-	public String processFormModel(HttpServletRequest request, Model model) {
-		
-		String name = request.getParameter("name");
-		
+	public String processFormModel(@RequestParam("name") String name, Model model) {
+				
 		String nameRevertArray = "";
 		
 		for (int i = (name.toCharArray().length - 1); i >= 0; i-- ) {
