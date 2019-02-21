@@ -8,31 +8,31 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestParam;
 
 @Controller
-public class MainController {
+public class BasicPageController {
 
 	@RequestMapping("/")
 	public String showMainPage() {
-		return "index";
+		return "basic/index";
 	}
 	
 	@RequestMapping("/home")
 	public String showMainPageHome() {
-		return "index";
+		return "basic/index";
 	}
 	
 	@RequestMapping("/showForm")
 	public String showForm() {
-		return "form";
+		return "basic/form";
 	}
 	
 	@RequestMapping("/processForm")
 	public String processForm() {
-		return "helloWorld";
+		return "basic/helloWorld";
 	}
 	
 	@RequestMapping("/showFormModel")
 	public String showFormModel() {
-		return "formModel";
+		return "basic/formModel";
 	}
 	
 	@RequestMapping("/processFormModel")
@@ -46,6 +46,6 @@ public class MainController {
 		
 		model.addAttribute("name", nameRevertArray);
 		
-		return "helloWorldWithModel";
+		return "basic/helloWorldWithModel";
 	}
 }
