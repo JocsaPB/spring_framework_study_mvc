@@ -23,4 +23,8 @@
 		<property name="suffix" value=".jsp"></property>
 	</bean>
 
+	<!--
+		Used when want to use static resources. Needs to create resource folder inside WebContent folder. 
+		<mvc:resources mapping="/resources/**" location="/resources/"></mvc:resources>
+	 -->	
 </beans>

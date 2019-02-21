@@ -1,6 +1,9 @@
 package com.study.springframework.mvc;
 
+import javax.servlet.http.HttpServletRequest;
+
 import org.springframework.stereotype.Controller;
+import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.RequestMapping;
 
 @Controller
@@ -8,6 +11,11 @@ public class MainController {
 
 	@RequestMapping("/")
 	public String showMainPage() {
+		return "index";
+	}
+	
+	@RequestMapping("/home")
+	public String showMainPageHome() {
 		return "index";
 	}
 	
@@ -21,4 +29,24 @@ public class MainController {
 		return "helloWorld";
 	}
 	
+	@RequestMapping("/showFormModel")
+	public String showFormModel() {
+		return "formModel";
+	}
+	
+	@RequestMapping("/processFormModel")
+	public String processFormModel(HttpServletRequest request, Model model) {
+		
+		String name = request.getParameter("name");
+		
+		String nameRevertArray = "";
+		
+		for (int i = (name.toCharArray().length - 1); i >= 0; i-- ) {
+			nameRevertArray += name.toCharArray()[i];
+		}
+		
+		model.addAttribute("name", nameRevertArray);
+		
+		return "helloWorldWithModel";
+	}
 }

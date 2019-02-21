@@ -7,7 +7,7 @@
 <title>Hello</title>
 </head>
 <body>
-	Hello ${param.name}, you are in the Spring MVC World!
+	Hello ${name}, you are in the Spring MVC World!
 	<br>
 	<br>
 	<a href="/home">Go Home</a>
